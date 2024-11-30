@@ -1,15 +1,36 @@
-'use client'
+"use client";
+import { useState, useEffect} from "react";
 
 import Button from "./Button";
 
-const TodoForm = () => {
+const TodoForm = ({tasks, setTasks}) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+  });
+    
+    
 
-    function submitHandler(e) {
-        e.preventDefault();
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  }
 
-        console.log("List Added Successfully");
+  function submitHandler(e) {
+      e.preventDefault();
+      
+
+      console.log('---', formData, '---');
+      setTasks([...tasks, formData]);
+      
+
+    console.log("List Added Successfully");
+    }
+    
+    useEffect(() => {
+        console.log(tasks);
         
-}
+    }, [tasks])
 
   return (
     <form onSubmit={submitHandler} className="bg-slate-900 rounded-sm py-8">
@@ -30,6 +51,8 @@ const TodoForm = () => {
               className="text-black outline-none px-2 py-1 rounded-md focus:ring-4 focus:ring-slate-500 md:w-[85%]"
               placeholder="List name"
               type="text"
+              value={formData.name}
+              onChange={handleInputChange}
             />
           </div>
 
@@ -44,13 +67,15 @@ const TodoForm = () => {
               className="text-black outline-none px-2 py-1 rounded-md focus:ring-4 focus:ring-slate-500 md:w-[85%]"
               placeholder="Description ..."
               type="text"
+              value={formData.description}
+              onChange={handleInputChange}
             />
           </div>
         </div>
 
         {/* Button - Section */}
-        <div className="mt-6 flex justify-center items-center md:w-[85%]">
-          <Button label="Done" />
+        <div className="mt-6 flex justify-center md:justify-start items-center">
+          <Button label="Done" type='submit' />
         </div>
       </div>
     </form>

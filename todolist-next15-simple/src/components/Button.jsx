@@ -1,6 +1,6 @@
 'use client'
 
-const Button = ({ label, variant = "normal" }) => {
+const Button = ({ label, variant = "normal", type="button" }) => {
     let className = "";
 
 
@@ -11,7 +11,7 @@ const Button = ({ label, variant = "normal" }) => {
 
   return (
     
-      <button className={`rounded-md py-1 ${className}`}>
+      <button className={`rounded-md py-1 ${className}`} type={type}>
           {label}
       </button>
   )
