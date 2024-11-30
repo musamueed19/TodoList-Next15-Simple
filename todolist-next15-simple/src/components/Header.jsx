@@ -3,9 +3,9 @@ import Link from "next/link";
 const Header = () => {
   return (
     <div className="h-[10vh] bg-[#252525] sticky top-0 shadow-sm shadow-gray-600">
-      <div className="h-full w-[90%] md:w-[80%] mx-auto flex items-center justify-between">
+      <div className="h-full w-[95%] md:w-[80%] mx-auto flex items-center justify-between">
         <div>
-          <h1 className="font-bold text-3xl uppercase text-center w-full">
+          <h1 className="font-bold text-2xl md:text-3xl uppercase text-center w-full">
             Todo List App
           </h1>
         </div>
@@ -23,7 +23,7 @@ const Header = () => {
           {/* List All Todos */}
           <Link
             href="#allTodos"
-            className="py-1 px-2.5 border-[1.5px] rounded-lg text-lg text-blue-400 font-semibold border-blue-700 hover:bg-[#142128]"
+            className="hidden sm:inline py-1 px-2.5 border-[1.5px] rounded-lg text-lg text-blue-400 font-semibold border-blue-700 hover:bg-[#142128]"
           >
             All Todos
           </Link>
