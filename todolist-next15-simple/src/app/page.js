@@ -32,7 +32,7 @@ const [tasks, setTasks] = useState([]);
         <div className="mt-6 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 w-[95%] md:w-[90%] mx-auto">
           <TodoForm tasks={tasks} setTasks={setTasks} />
 
-          <ListTodos tasks={tasks} />
+          <ListTodos tasks={tasks} setTasks={setTasks} />
         </div>
       </div>
     </>
