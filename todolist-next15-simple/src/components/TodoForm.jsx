@@ -33,7 +33,7 @@ const TodoForm = ({tasks, setTasks}) => {
     }, [tasks])
 
   return (
-    <form onSubmit={submitHandler} className="bg-slate-900 rounded-sm py-8">
+    <form onSubmit={submitHandler} className="bg-slate-900 rounded-sm py-8" id="addTodo">
       <h1 className="text-center mb-5 text-3xl text-blue-400 font-bold">
         Add New List
       </h1>
